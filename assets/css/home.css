@@ -1,0 +1,103 @@
+body{
+    background-color: beige;
+    font-family: sans-serif;
+    color: grey;
+    
+}
+
+/*App styling */
+.appsize{
+    background-color: white;
+    height: 600px;
+    width: 500px;
+    margin: auto;
+    
+}
+/*form category*/
+#category{
+    height: 50px;
+    width: 296px;
+    border: none;
+}
+/* form date */
+#date{
+    height: 50px;
+    width: 198px;
+}
+/*styling of the add and delete buttons*/
+.buttons{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+
+}
+
+#add_button{
+    height: 70px;
+    width: 150px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+#delete_button{
+    height: 70px;
+    width: 150px;
+    background-color:red;
+    color: white;
+    font-size: 20px;
+}
+
+/*tasks list box */
+.list{
+    height: 150px;
+    width: 100%;
+    overflow:scroll;
+    padding-top: 20px;
+    margin-top: 20px;
+    
+}
+
+/* to remove the scrol bar of tasks list  */
+.list::-webkit-scrollbar {
+    display: none;
+}
+/*task list styling*/
+#todotask{
+    display: flex;
+    width: 95%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    
+}
+/*task description*/
+#des{
+    width: 350px;
+}
+/*tasks category container*/
+.br{
+    height: 40px; width: 80px; display: flex; justify-content: center; align-items: center;
+    background-color: coral;
+}
+.br div{
+    margin: auto;
+    color: white;
+}
+
+
+
+
+/*general*/
+.center{
+    text-align: center;
+}
+.bordernone{
+    border: none;
+}
+.border{
+    border: 1px solid grey;
+}

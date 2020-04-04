@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <script src="https://kit.fontawesome.com/68ecea0092.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+  
+        <div class="appsize">
+            <h1 class="center">ToDo APP</h1>
+            <!-- Form to create an item in the list using post request -->
+            <form id="task" action="/add-task" method="POST">    
+                <div class="border">
+                    <p><b>description</b></p>
+                    <textarea class="bordernone" name="description" cols="67" placeholder="enter what to do"  ></textarea>
+                    
+                </div>              
+                  <div class="border" ><p>category and Due date</p>
+                      <select id="category"  name="category" >
+                            <option>choose category</option>                       
+                            <option value="Personal" >Personal</option>
+                            <option value="Work" >Work</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="School">School</option>
+                            <option value="Others">Others</option>
+                      /select>      
+                  </div>  
+                
+                <div class="border"> 
+                    <input class="bordernone" id="date" type="date" name="date" placeholder="due-date" >
+                </div>
+                <div class="buttons">
+                    <!-- Submit button container which submits out form and sends data  -->
+                <button id="add_button"  type="submit" ><i class="fas fa-plus"></i> Add task </button>
+                </div>
+            </form>
+            <div>
+            <form action="/delete-task" method="POST">
+                <div class="buttons " >
+                    <!-- Delete button which submits out form and sends selected items to be deleted(their unique ids) data  -->
+                <button id="delete_button" type="submit" >  <i class="fas fa-trash-alt"></i>  Delete task</button>
+            </div>
+            <b>TASKS</b>
+              <!-- List container which consists of each item in the list, getting populated by iterating over toDoList array -->
+            <div class="list">
+               
+                    <%  for ( let i of tasks) { %>
+                    
+                            <div id="todotask" class="input-fields">
+                             <div > <input id="check" type="checkbox" name="<%= i._id %>"  > </div>
+                           <div  id="des">    
+                                  <p id="dese" >  <%= i.description  %> </p>
+                                    <p id="da" ><small>due-date-</small> <%= i.date %></p>
+                              </div>
+                            <div   class="border br"><div><%= i.category %> </div></div>
+                            </div>
+                        
+                            <br>
+                   <%} %>
+                
+            </div>
+        
+        </form>
+        </div>
+
+        </div>
+
+
+            <script type="text/javascript" src="/js/home.js" ></script>
+    </body>
+</html>
